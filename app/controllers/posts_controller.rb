@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[ create ]
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.with_rich_text_content_and_embeds
+    @posts = Post.all.with_rich_text_body_and_embeds
   end
 
   # GET /posts/1 or /posts/1.json
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save
