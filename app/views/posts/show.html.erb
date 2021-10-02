@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <strong>Capa:</strong>
+  <strong>Cover:</strong>
   <%= image_tag @post.cover %>
 </p>
 
@@ -20,10 +20,17 @@
   <%= @post.body %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
+<h2>Adicione um comentário:</h2>
+
+<%= render 'commentaries/form' %>
+
+
+<h2>Comentários:</h2>
+
+<%= render @post.commentaries %>
+
+<br>
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

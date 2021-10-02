@@ -1,0 +1,9 @@
+<%= simple_form_for [@post, @post.commentaries.build] do |f| %>
+  <div class='field'>
+    <%= f.input :body, input_html: { rows: 10 } %>
+  </div>
+
+  <div class='actions'>
+    <%= f.button :submit %>
+  </div>
+<% end %>

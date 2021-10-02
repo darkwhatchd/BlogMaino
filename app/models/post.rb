@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  has_many :commentaries
+  has_many :commentaries, dependent: :destroy
 
   has_one_attached :cover do |attachable|
     attachable.variant :thumb, resize: "300x300"
