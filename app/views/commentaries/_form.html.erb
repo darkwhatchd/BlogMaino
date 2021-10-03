@@ -1,9 +1,14 @@
 <%= simple_form_for [@post, @post.commentaries.build] do |f| %>
   <div class='field'>
-    <%= f.input :body, input_html: { rows: 10 } %>
+    <div class="control">
+      <%= f.text_area :body, class: 'textarea', value: 'Escreva seu comentário aqui' %>
+    </div>
   </div>
-
-  <div class='actions'>
-    <%= f.button :submit %>
+  <div class="columns">
+    <div class="column is-3 is-offset-4">
+      <div class='actions'>
+        <%= f.button :submit, class: 'button is-info commentary-button' %>
+      </div>
+    </div>
   </div>
 <% end %>

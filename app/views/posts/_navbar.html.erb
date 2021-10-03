@@ -27,6 +27,7 @@
       <div class="navbar-item">
         <div class="buttons">
           <% if current_user %>
+            <%= link_to "Editar perfil", edit_user_registration_path, :method => :get, class: 'button is-info' %>
             <%= link_to "Encerrar sessão", destroy_user_session_path, :method => :delete, class: 'button is-danger' %>
           <% else %>
             <a class="button is-info", href="/users/sign_up">

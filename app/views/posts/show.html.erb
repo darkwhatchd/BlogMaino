@@ -1,37 +1,50 @@
-<p id="notice"><%= notice %></p>
+<section class="section">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+  <h1 class="title">
+    <%= @post.title %>
+  </h1>
 
-<p>
-  <strong>Cover:</strong>
-  <%= image_tag @post.cover %>
-</p>
+  <div class="has-text-centered">
+    <p>
+      <%= image_tag @post.cover, size: '700x700' %>
+    </p>
+  </div>
 
-<p>
-  <strong>Resume:</strong>
-  <%= @post.resume %>
-</p>
+  <div class="columns has-text-justified">
+    <div class="column is-8 is-offset-2">
+      <div class="content">
+        <p class="subtitle">
+          <strong>
+            <%= @post.resume %>
+          </strong>
+        </p>
 
-<p>
-  <strong>Post:</strong>
-  <%= @post.body %>
-</p>
+        <p class="subtitle">
+          <%= @post.body %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h2 class="title is-3">Adicione um comentário:</h2>
 
-<h2>Adicione um comentário:</h2>
+  <div class="container">
+    <%= render 'commentaries/form' %>
+  </div>
 
-<%= render 'commentaries/form' %>
+  <hr>
 
+  <h2 class="title is-3">Comentários:</h2>
 
-<h2>Comentários:</h2>
+  <div class="has-text-justified">
+    <%= render @post.commentaries %>
+  </div>
 
-<%= render @post.commentaries %>
+  <br>
 
-<br>
-
-<% if @post.user == current_user %>
-  <%= link_to 'Edit', edit_post_path(@post), class: 'button is-info is-light' %>
-  <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' %>
-<% end %>
+  <% if @post.user == current_user %>
+    <%= link_to 'Edit', edit_post_path(@post), class: 'button is-info is-light' %>
+    <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' %>
+  <% end %>
+</section>
