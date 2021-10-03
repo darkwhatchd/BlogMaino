@@ -3,8 +3,8 @@
     <div class="columns pl-1 pr-1">
       <div class="column is-3">
         <div class="card-image">
-          <figure class="image">
-            <%= image_tag post.cover, :size => "300x300"  %>
+          <figure class="image">        
+            <a href=<%= "/posts/#{post.id}" %>><%= image_tag post.cover, :size => "300x300"  %></a>
           </figure>
         </div>
       </div>
