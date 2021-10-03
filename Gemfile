@@ -5,7 +5,7 @@ ruby '3.0.1'
 gem 'devise'
 gem 'simple_form'
 gem "bulma-rails", "~> 0.9.1"
-gem 'kaminari'
+gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'

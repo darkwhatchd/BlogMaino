@@ -4,7 +4,9 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.with_rich_text_body_and_embeds
+    @posts = Post.all.with_rich_text_body_and_embeds.order(
+      created_at: :desc
+    ).page(params[:page]).per(3)
   end
 
   # GET /posts/1 or /posts/1.json
