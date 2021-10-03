@@ -1,0 +1,44 @@
+<div class="hero is-link">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu pl-5">
+    <div class="navbar-start">
+      <a class="navbar-item", href='/'>
+        Início
+      </a>
+
+      <a class="navbar-item pl-5" href="/posts">
+        Todos os Posts
+      </a>
+
+      <% if current_user %>
+        <%= link_to 'Criar Post', new_post_path, class: 'navbar-item pl-5' %>
+      <% end %>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <% if current_user %>
+            <%= link_to "Encerrar sessão", destroy_user_session_path, :method => :delete, class: 'button is-danger' %>
+          <% else %>
+            <a class="button is-info", href="/users/sign_up">
+              <strong>Cadastrar</strong>
+            </a>
+            <a class="button is-info is-light", href="/users/sign_in">
+              Iniciar sessão
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>

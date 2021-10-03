@@ -1,37 +1,50 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<section class="section">
+  <%= form_with(model: post) do |form| %>
+    <% if post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :title, class: 'label' %>
+      <div class="control">
+        <%= form.text_field :title %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :cover, class: 'label' %>
+      <div class="control">
+        <%= form.file_field :cover %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :resume, class: 'label' %>
+      <div class="control">
+        <%= form.text_area :resume, class: 'textarea' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :body, class: 'label' %>
+      <%= form.rich_text_area :body %>
+    </div>
+
+    <div class="actions">
+      <div class="control">
+        <button class="button is-info">
+          <% form.submit %>
+          Criar Post
+        </button>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cover %>
-    <%= form.file_field :cover %>
-  </div>
-
-  <div class="field">
-    <%= form.label :resume %>
-    <%= form.text_area :resume %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.rich_text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</section>

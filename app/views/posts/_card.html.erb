@@ -1,0 +1,22 @@
+<% @posts.each do |post| %>  
+  <div class="card py-3">
+    <div class="columns">
+      <div class="column is-3">
+        <div class="card-image">
+          <figure class="image">
+            <%= image_tag post.cover, :size => "300x300"  %>
+          </figure>
+        </div>
+      </div>
+      <div class="column is-9">
+        <h1 class="title is-4"><%= post.title %></h1>
+        <p class="subtitle"><%= post.resume %><p>
+        <p class="subtitle is-6">Por: <%= post.user.name %></p>
+        <p class="subtitle is-6"><%= post.created_at.strftime("%d/%m/%Y - %H:%M") %></p>
+        <div class="has-text-centered">
+          <%= link_to 'Ver mais', post, class: 'button is-info' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

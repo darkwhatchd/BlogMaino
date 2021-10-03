@@ -9,5 +9,6 @@ class Post < ApplicationRecord
 
   has_rich_text :body
 
-  validates :title, :cover, :resume, presence: true
+  validates :title, :cover, presence: true
+  validates :resume, length: {minimum:100, maximum:1000}, presence: true
 end
