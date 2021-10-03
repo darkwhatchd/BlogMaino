@@ -14,7 +14,7 @@
     <div class="field">
       <%= form.label :title, class: 'label' %>
       <div class="control">
-        <%= form.text_field :title %>
+        <%= form.text_field :title, class: 'input is-info', placeholder: 'Titulo da postagem' %>
       </div>
     </div>
 
@@ -28,20 +28,20 @@
     <div class="field">
       <%= form.label :resume, class: 'label' %>
       <div class="control">
-        <%= form.text_area :resume, class: 'textarea' %>
+        <%= form.text_area :resume, class: 'textarea is-info', placeholder: 'Digite um resumo (mínimo 100 caracteres, máximo 1000)' %>
       </div>
     </div>
 
     <div class="field">
       <%= form.label :body, class: 'label' %>
-      <%= form.rich_text_area :body %>
+      <%= form.rich_text_area :body, placeholder: 'Conteúdo completo do Post' %>
     </div>
 
     <div class="actions">
       <div class="control">
         <button class="button is-info">
           <% form.submit %>
-          Criar Post
+          Enviar
         </button>
       </div>
     </div>
