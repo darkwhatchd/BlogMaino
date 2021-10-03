@@ -1,24 +1,20 @@
 # README
+Project developed to resolve Mainô challenge.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Developed with Ruby on Rails, BulmaCSS, SQLite3.
 
-Things you may want to cover:
+ruby '3.0.1'
 
-* Ruby version
+rails '6.1.4'
 
-* System dependencies
+bulma-rails "0.9.1"
 
-* Configuration
+Utilizes ActiveStorage, ActionText, Devise, Kaminari, image_processing, simple_form.
 
-* Database creation
+Is a blog with functions of:
 
-* Database initialization
+User authentication
 
-* How to run the test suite
+Logged user can create new posts, edit own posts, destroy posts, edit profile and comment like user.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Unlogged user can only show posts, and comment like anonimous.
