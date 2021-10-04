@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :verify_user, only: %i[ edit update destroy ]
 
   # GET /posts or /posts.json
+  # Posts pagination oredered
   def index
     @posts = Post.all.with_rich_text_body_and_embeds.order(
       created_at: :desc
@@ -72,6 +73,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :resume, :cover, :body, :user_id)
     end
 
+    # Verify if Post_user is same current user to permit update and destroy
     def verify_user
       unless current_user.id == @post.user_id
         redirect_to posts_url, notice: "Permission denied"
