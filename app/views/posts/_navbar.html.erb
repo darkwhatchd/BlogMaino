@@ -11,30 +11,36 @@
   <div id="navbarBasicExample" class="navbar-menu pl-5">
     <div class="navbar-start">
       <a class="navbar-item", href='/'>
-        Início
+        <%= t('Home') %>
       </a>
 
       <a class="navbar-item pl-5" href="/posts">
-        Todos os Posts
+        <%= t('All posts') %>
       </a>
 
       <% if current_user %>
-        <%= link_to 'Criar Post', new_post_path, class: 'navbar-item pl-5' %>
+        <%= link_to t('Create post'), new_post_path, class: 'navbar-item pl-5' %>
       <% end %>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
+          <a class="button is-small is-light is-danger" href="<%= request.path %>?locale=en">
+            US
+          </a>
+          <a class="button is-small is-light is-primary" href="<%= request.path %>?locale=pt-BR">
+            PT-BR
+          </a>
           <% if current_user %>
-            <%= link_to "Editar perfil", edit_user_registration_path, :method => :get, class: 'button is-info' %>
-            <%= link_to "Encerrar sessão", destroy_user_session_path, :method => :delete, class: 'button is-danger' %>
+            <%= link_to t("Edit profile"), edit_user_registration_path, :method => :get, class: 'button is-info' %>
+            <%= link_to t("Sign out"), destroy_user_session_path, :method => :delete, class: 'button is-danger' %>
           <% else %>
             <a class="button is-info", href="/users/sign_up">
-              <strong>Cadastrar</strong>
+              <strong><%= t('Sign up') %></strong>
             </a>
             <a class="button is-info is-light", href="/users/sign_in">
-              Iniciar sessão
+              <%= t('Sign in') %>
             </a>
           <% end %>
         </div>

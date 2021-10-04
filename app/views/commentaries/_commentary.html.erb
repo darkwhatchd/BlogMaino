@@ -1,12 +1,12 @@
 <hr>
 <% if commentary.author_name.nil? && !commentary.created_at.nil? %>
-  <p class="subtitle"><strong>Anônimo</strong></p>
+  <p class="subtitle"><strong><%= t('Anonymous') %></strong></p>
 <% elsif !commentary.created_at.nil? %>
   <p class="subtitle"><strong><%= commentary.author_name %></strong></p>
 <% end %>
   
 <% unless commentary.created_at.nil? %>
-  <p class="subtitle is-7">Data: <%= (commentary.created_at - 10800).strftime('%d/%m/%Y às %H:%M') %></p>
+  <p class="subtitle is-7"><%= t('Date') %>: <%= (commentary.created_at - 10800).strftime('%d/%m/%Y às %H:%M') %></p>
   <p class="subtitle is-6"><%= commentary.body %></p>
 <% end %>
 <hr>

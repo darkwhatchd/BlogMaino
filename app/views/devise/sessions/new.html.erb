@@ -1,5 +1,5 @@
 <section class="section">
-  <h2 class="title">Faça Login</h2>
+  <h2 class="title"><%= t('Login Area') %></h2>
   <div class="columns">
     <div class="column is-4 is-offset-4">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -12,13 +12,13 @@
 
         <div class="field">
           <%= f.label :password, class: 'label' %>
-          <%= f.password_field :password, autocomplete: "current-password", class: 'input is-info', placeholder: 'Password' %>
+          <%= f.password_field :password, autocomplete: "current-password", class: 'input is-info', placeholder: t('Password') %>
         </div>
 
         <% if devise_mapping.rememberable? %>
           <div class="field">
             <div class='control'>
-              <%= f.label :remember_me, 'Lembrar minha conta', class: 'label' %>
+              <%= f.label :remember_me, t('Remember my account'), class: 'label' %>
               <%= f.check_box :remember_me, class: 'checkbox' %>
             </div>
           </div>
@@ -26,15 +26,15 @@
 
         <div class="field is-grouped">
           <div class="actions control">
-            <%= f.submit "Entrar", class: 'button is-info' %>
+            <%= f.submit t("Enter"), class: 'button is-info' %>
           </div>
           <div class="control">
             <a href="/users/sign_up", class="button is-light is-info">
-              Cadastre-se
+              <%= t('Sign up') %>
             </a>
           </div>
           <div class="control">
-            <%= link_to "Esqueceu sua senha?", new_user_password_path, :method => :get, class: 'button is-light is-danger' %>
+            <%= link_to t("Forgot your password?"), new_user_password_path, :method => :get, class: 'button is-light is-danger' %>
           </div>
         </div>
       <% end %>

@@ -1,5 +1,5 @@
 <section class="section">
-  <h2 class="title">Editar conta</h2>
+  <h2 class="title"><%= t('Edit account') %></h2>
   <div class="columns">
     <div class="column is-4 is-offset-4">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -24,38 +24,40 @@
         <% end %>
 
         <div class="field">
-            <%= f.label :password, class: 'label' %><i>Deixe em branco, se não quiser alterar</i>
+            <%= f.label :password, class: 'label' %><i><%= t('Blank if dont want change') %></i>
             <div class="control">
-              <%= f.password_field :password, autocomplete: "new-password", class: 'input is-info', placeholder: "#{@minimum_password_length} caracteres no mínimo." %>
+              <%= f.password_field :password, autocomplete: "new-password", class: 'input is-info', placeholder: t("Password") + " (#{@minimum_password_length} " + t("Minimum characters") + ")" %>
             </div>
           </div>
 
         <div class="field">
           <%= f.label :password_confirmation, class: 'label' %>
           <div class="control">
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-info', placeholder: 'Confirme a senha' %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-info', placeholder: t('Password confirmation') %>
           </div>
         </div>
 
         <div class="field">
-          <%= f.label :current_password, class: 'label' %> <i>Senha atual, para confirmar as alterações.</i><br />
+          <%= f.label :current_password, class: 'label' %> <i><%=  t('Current password to confirm changes') %>.</i><br />
           <div class="control">
-            <%= f.password_field :current_password, autocomplete: "current-password", placeholder: 'Senha atual', class: 'input is-info' %>
+            <%= f.password_field :current_password, autocomplete: "current-password", placeholder: t('Current password'), class: 'input is-info' %>
           </div>
         </div>
 
         <div class="field">
           <div class="actions control">
-            <%= f.submit "Atualizar", class: 'button is-info' %>
+            <%= f.submit t("Update"), class: 'button is-info' %>
           </div>
         </div>
       <% end %>
       <div>
-        <%= button_to "Cancel my account", registration_path(resource_name), class: 'button is-light is-danger', data: { confirm: "Are you sure?" }, method: :delete %>
+        <%= button_to t("Cancel my account"), registration_path(resource_name), class: 'button is-light is-danger', data: { confirm: "Are you sure?" }, method: :delete %>
       </div>
       <br>
       <div>
-        <a href="/" class='button is-light is-info'>Voltar<a>
+        <a href="/" class='button is-light is-info'>
+          <%= t('Back') %>
+        <a>
       </div>
     </div>
   </div>

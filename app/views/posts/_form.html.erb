@@ -14,7 +14,7 @@
     <div class="field">
       <%= form.label :title, class: 'label' %>
       <div class="control">
-        <%= form.text_field :title, class: 'input is-info', placeholder: 'Titulo da postagem' %>
+        <%= form.text_field :title, class: 'input is-info', placeholder: t('Post title') %>
       </div>
     </div>
 
@@ -28,23 +28,23 @@
     <div class="field">
       <%= form.label :resume, class: 'label' %>
       <div class="control">
-        <%= form.text_area :resume, class: 'textarea is-info', placeholder: 'Digite um resumo (mínimo 100 caracteres, máximo 1000)' %>
+        <%= form.text_area :resume, class: 'textarea is-info', placeholder: t('Type a post resume (Min 100, Max 1000 characters)') %>
       </div>
     </div>
 
     <div class="field">
       <%= form.label :body, class: 'label' %>
-      <%= form.rich_text_area :body, placeholder: 'Conteúdo completo do Post' %>
+      <%= form.rich_text_area :body, placeholder: t('Complete post content') %>
     </div>
 
     <div class="actions">
       <div class="control">
         <button class="button is-info">
           <% form.submit %>
-          Enviar
+          <%= t('Send') %>
         </button>
       </div>
     </div>
 
-    <%= link_to 'Voltar', posts_path, class: 'button is-light is-info' %>
+    <%= link_to t('Back'), posts_path, class: 'button is-light is-info' %>
   <% end %>

@@ -1,0 +1,17 @@
+"pt-BR":
+  models:
+    user: Usuário
+    post: Post
+    commentary: Comentário
+  attributes:
+    id: 'Id'
+    name: 'Nome'
+    email: 'Email'
+    password: 'Senha'
+    body: 'Corpo'
+    cover: 'Capa'
+    resume: 'Resumo'
+    author_name: 'Nome do autor'
+    title: 'Título'
+    created_at: 'Criado em'
+    updated_at: 'Atualizado em'

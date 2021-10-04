@@ -1,5 +1,5 @@
 <section class="section">
-  <h2 class="title">Mude a sua senha</h2>
+  <h2 class="title"><%= t('Change your password') %></h2>
   <div class="columns">
     <div class="column is-4 is-offset-4">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -9,19 +9,19 @@
         <div class="field">
           <%= f.label :password, class: 'label' %>
           <div class="control">
-            <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'input is-info', placeholder: "Password (#{@minimum_password_length} caracteres no mínimo)" %>
+            <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'input is-info', placeholder: t("Password") + " (#{@minimum_password_length} " + t("Minimum characters") + ")" %>
           </div>
         </div>
 
         <div class="field">
             <%= f.label :password_confirmation, class: 'label' %>
             <div class="control">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-info', placeholder: 'Confirme a senha' %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-info', placeholder: t('Password confirmation') %>
             </div>
           </div>
 
         <div class="actions">
-          <%= f.submit "Change my password", class: 'button is-info' %>
+          <%= f.submit t("Change my password"), class: 'button is-info' %>
         </div>
       <% end %>
     </div>

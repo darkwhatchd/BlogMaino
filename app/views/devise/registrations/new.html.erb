@@ -1,5 +1,5 @@
 <section class="section">
-  <h2 class="title">Cadastre-se</h2>
+  <h2 class="title"><%= t('Sign up') %></h2>
   <div class="columns">
     <div class="column is-4 is-offset-4">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -7,7 +7,7 @@
           <div class="field">
             <%= f.label :name, class: 'label' %>
             <div class="control">
-              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'input is-info', placeholder: 'Nome' %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'input is-info', placeholder: t('Name') %>
             </div>
           </div>
 
@@ -21,24 +21,24 @@
           <div class="field">
             <%= f.label :password, class: 'label' %>
             <div class="control">
-              <%= f.password_field :password, autocomplete: "new-password", class: 'input is-info', placeholder: "Password (#{@minimum_password_length} caracteres no mínimo)" %>
+              <%= f.password_field :password, autocomplete: "new-password", class: 'input is-info', placeholder:  t("Password") + " (#{@minimum_password_length} " + t("Minimum characters") + ")" %>
             </div>
           </div>
 
           <div class="field">
             <%= f.label :password_confirmation, class: 'label' %>
             <div class="control">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-info', placeholder: 'Confirme a senha' %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-info', placeholder: t('Password confirmation') %>
             </div>
           </div>
 
           <div class="field is-grouped">
             <div class="actions control">
-              <%= f.submit "Cadastrar", class: 'button is-info' %>
+              <%= f.submit t("Sign up"), class: 'button is-info' %>
             </div>
             <div class="control">
               <a href="/users/sign_in", class="button is-light is-info">
-                Entrar
+                <%= t('Enter') %>
               </a>
             </div>
           </div>
