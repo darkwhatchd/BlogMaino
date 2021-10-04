@@ -76,3 +76,19 @@ en:
   Destroy: 'Destroy'
   Edit account: 'Edit account'
   By: 'By'
+  models:
+    user: User
+    post: Post
+    commentary: Commentary
+  attributes:
+    id: 'Id'
+    name: 'Name'
+    email: 'Email'
+    password: 'Password'
+    body: 'Body'
+    cover: 'Cover'
+    resume: 'Resume'
+    author_name: 'Author name'
+    title: 'Title'
+    created_at: 'Created at'
+    updated_at: 'Updated at'
