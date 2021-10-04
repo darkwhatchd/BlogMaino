@@ -62,6 +62,8 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "blogMaino_production"
 
+  config.action_mailer.raise_delivery_errors = true
+
   config.action_mailer.perform_caching = false
   #config.action_mailer.perform_deliveries = true
   #Rails.application.credentials.dig(:sendgrid, :api_key)
